@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.apache.pig.contrib.gui.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Pig GUI Perspective"
+            class="org.apache.pig.contrib.gui.Perspective"
+            id="org.apache.pig.contrib.gui.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Pig_GUI.application"
+            name="Pig GUI">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+         <property
+               name="appName"
+               value="Pig GUI">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="org.apache.pig.contrib.gui.view.PigScriptViewer"
+            id="org.apache.pig.contrib.gui.view.PigScriptView"
+            name="PigScriptView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.apache.pig.contrib.gui.handler.RunHandler"
+            id="org.apache.pig.contrib.gui.command.run"
+            name="Run">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="Pig-GUI.menuContribution1">
+         <toolbar
+               id="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+            <command
+                  commandId="org.apache.pig.contrib.gui.command.run"
+                  icon="icons/alt_window_16.gif"
+                  label="Run"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               commandId="org.apache.pig.contrib.gui.command.run"
+               label="Run">
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
