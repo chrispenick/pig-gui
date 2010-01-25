@@ -14,5 +14,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.console;bundle-version="3.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ClassPath: lib/pig.jar,
- .
+Bundle-ClassPath: .,
+ lib/pig.jar
