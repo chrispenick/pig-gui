@@ -1,0 +1,1 @@
+Every database system has a GUI client, so I'd like to create a thin client for pig.
